@@ -1,180 +1,452 @@
-import { useState } from "react";
-import useScrollReveal from "../hooks/useScrollReveal";
+
+
+
+// import { useState } from 'react';
+
+// export default function Contact() {
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     phone: '',
+//     message: ''
+//   });
+
+//   const [isSubmitting, setIsSubmitting] = useState(false);
+//   const [submitStatus, setSubmitStatus] = useState('');
+
+//   const handleChange = (e) => {
+//     setFormData({
+//       ...formData,
+//       [e.target.name]: e.target.value
+//     });
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     setIsSubmitting(true);
+//     setSubmitStatus('');
+
+//     // Create mailto link with form data
+//     const subject = encodeURIComponent(`New Enquiry from ${formData.name}`);
+//     const body = encodeURIComponent(
+//       `Name: ${formData.name}\n` +
+//       `Email: ${formData.email}\n` +
+//       `Phone: ${formData.phone}\n\n` +
+//       `Project Details:\n${formData.message}`
+//     );
+    
+//     const mailtoLink = `mailto:info@shriharshaassociates.com?subject=${subject}&body=${body}`;
+    
+//     // Open mail client
+//     window.location.href = mailtoLink;
+    
+//     // Reset form after a delay
+//     setTimeout(() => {
+//       setFormData({
+//         name: '',
+//         email: '',
+//         phone: '',
+//         message: ''
+//       });
+//       setIsSubmitting(false);
+//       setSubmitStatus('Thank you! Your enquiry has been sent.');
+//     }, 1000);
+//   };
+
+//   return (
+//     <section className="contact" id="contact">
+//       <div className="contact-container">
+
+//         {/* SECTION HEADER */}
+//         <div className="contact-header">
+//           <h2>Get in Touch</h2>
+//           <p className="contact-subtitle">
+//             We welcome meaningful conversations about projects that demand
+//             precision, integrity, and thoughtful execution. Share your
+//             requirements, and our team will connect with you directly.
+//           </p>
+//         </div>
+
+//         {/* TWO COLUMN LAYOUT */}
+//         <div className="contact-content">
+          
+//           {/* LEFT: FORM */}
+//           <div className="contact-form-section">
+//             <div className="contact-form">
+//               <form onSubmit={handleSubmit}>
+//                 <div className="form-group">
+//                   <input 
+//                     type="text" 
+//                     name="name"
+//                     value={formData.name}
+//                     onChange={handleChange}
+//                     required 
+//                   />
+//                   <label className={formData.name ? 'active' : ''}>Name</label>
+//                 </div>
+
+//                 <div className="form-group">
+//                   <input 
+//                     type="email" 
+//                     name="email"
+//                     value={formData.email}
+//                     onChange={handleChange}
+//                     required 
+//                   />
+//                   <label className={formData.email ? 'active' : ''}>Email</label>
+//                 </div>
+
+//                 <div className="form-group">
+//                   <input 
+//                     type="tel" 
+//                     name="phone"
+//                     value={formData.phone}
+//                     onChange={handleChange}
+//                     required 
+//                   />
+//                   <label className={formData.phone ? 'active' : ''}>Phone</label>
+//                 </div>
+
+//                 <div className="form-group">
+//                   <textarea 
+//                     name="message"
+//                     value={formData.message}
+//                     onChange={handleChange}
+//                     rows="5" 
+//                     required
+//                   ></textarea>
+//                   <label className={formData.message ? 'active' : ''}>Project Details</label>
+//                 </div>
+
+//                 <button type="submit" disabled={isSubmitting}>
+//                   <span>{isSubmitting ? 'Sending...' : 'Submit Enquiry'}</span>
+//                 </button>
+
+//                 {submitStatus && (
+//                   <p className="submit-status">{submitStatus}</p>
+//                 )}
+//               </form>
+//             </div>
+//           </div>
+
+//           {/* RIGHT: INFO + MAP */}
+//           <div className="contact-info-section">
+            
+//             {/* ADDRESS CARD */}
+//             <div className="contact-details-grid">
+//               <div className="detail-card">
+//                 <div className="detail-content">
+//                   <strong>Address</strong>
+//                   <span>
+//                     No.7, Vivekanandhar Street,<br />
+//                     Thirumoolar Colony, Anna Nagar West,<br />
+//                     Chennai – 600040
+//                   </span>
+//                 </div>
+//               </div>
+
+//               <div className="detail-card">
+//                 <div className="detail-content">
+//                   <strong>Phone</strong>
+//                   <span>+91 98414 19288</span>
+//                 </div>
+//               </div>
+
+//               <div className="detail-card">
+//                 <div className="detail-content">
+//                   <strong>Email</strong>
+//                   <span>info@shriharshaassociates.com</span>
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* MAP */}
+//             <div className="contact-map">
+//               <iframe
+//                 title="Shri Harsha Associates Location"
+//                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.1321341485736!2d80.20357487484407!3d13.085946112231362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265b2a2dfcc7b%3A0x8b8d7f17b6cdb02f!2sVivekanandhar%20St%2C%20Anna%20Nagar%20West%2C%20Chennai%2C%20Tamil%20Nadu%20600040!5e0!3m2!1sen!2sin!4v1732720000000"
+//                 loading="lazy"
+//                 referrerPolicy="no-referrer-when-downgrade"
+//               ></iframe>
+//             </div>
+
+//             {/* SOCIAL LINKS - NO LINKEDIN */}
+//             <div className="contact-socials">
+//               <a 
+//                 href="tel:+919841419288" 
+//                 aria-label="Call us"
+//                 className="social-icon"
+//               >
+//                 <i className="fas fa-phone"></i>
+//               </a>
+//               <a 
+//                 href="https://wa.me/919841419288" 
+//                 target="_blank" 
+//                 rel="noopener noreferrer"
+//                 aria-label="WhatsApp"
+//                 className="social-icon"
+//               >
+//                 <i className="fab fa-whatsapp"></i>
+//               </a>
+//               <a 
+//                 href="https://www.instagram.com/shriharshaassociates" 
+//                 target="_blank" 
+//                 rel="noopener noreferrer"
+//                 aria-label="Instagram"
+//                 className="social-icon"
+//               >
+//                 <i className="fab fa-instagram"></i>
+//               </a>
+//               <a 
+//                 href="mailto:info@shriharshaassociates.com" 
+//                 aria-label="Email us"
+//                 className="social-icon"
+//               >
+//                 <i className="fas fa-envelope"></i>
+//               </a>
+//             </div>
+
+//           </div>
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// }
+
+
+import { useState } from 'react';
 
 export default function Contact() {
-  const [ref, visible] = useScrollReveal(0.15);
-
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    project: "",
-    message: ""
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
   });
 
-  const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
 
-  const validate = () => {
-    const e = {};
-    if (form.name.trim().length < 3) e.name = "Enter a valid name";
-    if (!/^\S+@\S+\.\S+$/.test(form.email)) e.email = "Enter a valid email";
-    if (!/^\d{10}$/.test(form.phone)) e.phone = "Enter 10 digit phone number";
-    if (form.message.trim().length < 10) e.message = "Message too short";
-    return e;
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const v = validate();
-    setErrors(v);
+    setIsSubmitting(true);
+    setSubmitStatus('');
 
-    if (Object.keys(v).length === 0) {
-      setLoading(true);
-
-      // 🔔 Replace this with EmailJS / backend later
-      setTimeout(() => {
-        setLoading(false);
-        setSubmitted(true);
-      }, 1500);
-    }
+    const subject = encodeURIComponent(`New Enquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone}\n\n` +
+      `Project Details:\n${formData.message}`
+    );
+    
+    const mailtoLink = `mailto:info@shriharshaassociates.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+    
+    setTimeout(() => {
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      setIsSubmitting(false);
+      setSubmitStatus('Thank you! Your enquiry has been sent.');
+    }, 1000);
   };
 
   return (
-    <section id="contact" className="contact-pro">
-      <div
-        ref={ref}
-        className={`contact-wrapper reveal ${visible ? "active" : ""}`}
-      >
+    <section className="contact" id="contact">
+      <div className="contact-container">
 
-        <h2 className="section-title">Contact Us</h2>
-        <p className="section-subtitle">
-          Let’s discuss your next construction or infrastructure project
-        </p>
+        {/* SECTION HEADER */}
+        <div className="contact-header">
+          <h2>Get in Touch</h2>
+          <p className="contact-subtitle">
+            We welcome meaningful conversations about projects that demand
+            precision, integrity, and thoughtful execution. Share your
+            requirements, and our team will connect with you directly.
+          </p>
+        </div>
 
-        <div className="contact-grid-pro">
+        {/* PREMIUM LAYOUT */}
+        <div className="contact-wrapper">
+          
+          {/* FORM SECTION */}
+          <div className="contact-form-container">
+            <div className="form-title">
+              <h3>Send us a Message</h3>
+              <p>Fill out the form and we'll get back to you shortly</p>
+            </div>
+            
+            <form onSubmit={handleSubmit} className="contact-form">
+              <div className="form-row">
+                <div className="form-group">
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required 
+                  />
+                  <label className={formData.name ? 'active' : ''}>Name</label>
+                </div>
 
-          {/* LEFT */}
-          <div className="contact-left">
-            <h3>Shri Harsha Associates</h3>
-            <p className="contact-tagline">
-              Trusted Construction Partner Since 2013
-            </p>
+                <div className="form-group">
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required 
+                  />
+                  <label className={formData.email ? 'active' : ''}>Email</label>
+                </div>
+              </div>
 
-            <p>
-              No. 24, Main Road<br />
-              Chennai, Tamil Nadu – 600040
-            </p>
+              <div className="form-group">
+                <input 
+                  type="tel" 
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required 
+                />
+                <label className={formData.phone ? 'active' : ''}>Phone</label>
+              </div>
 
-            <p><strong>Phone:</strong> +91 98414 19288</p>
-            <p><strong>Email:</strong> info@shriharshaassociates.com</p>
+              <div className="form-group">
+                <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows="5" 
+                  required
+                ></textarea>
+                <label className={formData.message ? 'active' : ''}>Project Details</label>
+              </div>
 
+              <button type="submit" disabled={isSubmitting} className="submit-btn">
+                <span>{isSubmitting ? 'Sending...' : 'Submit Enquiry'}</span>
+                <i className="fas fa-arrow-right"></i>
+              </button>
+
+              {submitStatus && (
+                <p className="submit-status">{submitStatus}</p>
+              )}
+            </form>
+          </div>
+
+          {/* INFO + MAP SECTION */}
+          <div className="contact-info-container">
+            
+            {/* CONTACT CARDS */}
+            <div className="contact-cards">
+              <div className="info-card">
+                <div className="card-icon">
+                  <i className="fas fa-map-marker-alt"></i>
+                </div>
+                <div className="card-content">
+                  <h4>Visit Us</h4>
+                  <p>
+                    No.7, Vivekanandhar Street,<br />
+                    Thirumoolar Colony,<br />
+                    Anna Nagar West,<br />
+                    Chennai – 600040
+                  </p>
+                </div>
+              </div>
+
+              <div className="info-card">
+                <div className="card-icon">
+                  <i className="fas fa-phone-alt"></i>
+                </div>
+                <div className="card-content">
+                  <h4>Call Us</h4>
+                  <p>+91 98414 19288</p>
+                </div>
+              </div>
+
+              <div className="info-card">
+                <div className="card-icon">
+                  <i className="fas fa-envelope"></i>
+                </div>
+                <div className="card-content">
+                  <h4>Email Us</h4>
+                  <p>info@shriharshaassociates.com</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CLICKABLE MAP */}
+            <a 
+              href="https://maps.app.goo.gl/hFjQJichhgVMhMiv6" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="contact-map-link"
+            >
+              <div className="contact-map">
+                <iframe
+                  title="Shri Harsha Associates Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.1321341485736!2d80.20357487484407!3d13.085946112231362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265b2a2dfcc7b%3A0x8b8d7f17b6cdb02f!2sVivekanandhar%20St%2C%20Anna%20Nagar%20West%2C%20Chennai%2C%20Tamil%20Nadu%20600040!5e0!3m2!1sen!2sin!4v1732720000000"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  style={{ pointerEvents: 'none' }}
+                ></iframe>
+                <div className="map-overlay">
+                  <i className="fas fa-external-link-alt"></i>
+                  <span>Open in Google Maps</span>
+                </div>
+              </div>
+            </a>
+
+            {/* SOCIAL LINKS */}
             <div className="contact-socials">
-              <a href="#"><i className="fa-solid fa-phone"></i></a>
-              <a href="#"><i className="fa-brands fa-facebook-f"></i></a>
-              <a href="#"><i className="fa-brands fa-linkedin-in"></i></a>
-              <a href="#"><i className="fa-brands fa-instagram"></i></a>
-              <a href="mailto:info@shriharshaassociates.com">
-                <i className="fa-solid fa-envelope"></i>
+              <a 
+                href="tel:+919841419288" 
+                aria-label="Call us"
+                className="social-link"
+              >
+                <i className="fas fa-phone"></i>
+              </a>
+              <a 
+                href="https://wa.me/919841419288" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="social-link"
+              >
+                <i className="fab fa-whatsapp"></i>
+              </a>
+              <a 
+                href="https://www.instagram.com/shriharshaassociates" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="social-link"
+              >
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a 
+                href="mailto:info@shriharshaassociates.com" 
+                aria-label="Email us"
+                className="social-link"
+              >
+                <i className="fas fa-envelope"></i>
               </a>
             </div>
 
-            <p className="contact-service-area">
-              Serving Chennai & Surrounding Areas
-            </p>
-
-            <iframe
-              title="Shri Harsha Associates Location"
-              src="https://www.google.com/maps?q=Anna+Nagar+Chennai+600040&output=embed"
-              loading="lazy"
-            ></iframe>
           </div>
-
-          {/* RIGHT */}
-          <div className="contact-right">
-            {submitted ? (
-              <div className="contact-success">
-                <h3>Thank You!</h3>
-                <p>
-                  Your enquiry has been received.<br />
-                  Our team will contact you shortly.
-                </p>
-              </div>
-            ) : (
-              <>
-                <h3>Send Us an Enquiry</h3>
-
-                <form onSubmit={handleSubmit} noValidate>
-                  <label>Full Name</label>
-                  <input
-                    type="text"
-                    value={form.name}
-                    onChange={(e) =>
-                      setForm({ ...form, name: e.target.value })
-                    }
-                  />
-                  {errors.name && <span className="error">{errors.name}</span>}
-
-                  <label>Email Address</label>
-                  <input
-                    type="email"
-                    value={form.email}
-                    onChange={(e) =>
-                      setForm({ ...form, email: e.target.value })
-                    }
-                  />
-                  {errors.email && <span className="error">{errors.email}</span>}
-
-                  <label>Phone Number</label>
-                  <input
-                    type="tel"
-                    value={form.phone}
-                    onChange={(e) =>
-                      setForm({ ...form, phone: e.target.value })
-                    }
-                  />
-                  {errors.phone && <span className="error">{errors.phone}</span>}
-
-                  <label>Project Type (Optional)</label>
-                  <select
-                    value={form.project}
-                    onChange={(e) =>
-                      setForm({ ...form, project: e.target.value })
-                    }
-                  >
-                    <option value="">Select</option>
-                    <option>Residential</option>
-                    <option>Commercial</option>
-                    <option>Industrial</option>
-                    <option>Renovation</option>
-                  </select>
-
-                  <label>Your Message</label>
-                  <textarea
-                    value={form.message}
-                    onChange={(e) =>
-                      setForm({ ...form, message: e.target.value })
-                    }
-                  />
-                  {errors.message && (
-                    <span className="error">{errors.message}</span>
-                  )}
-
-                  <button type="submit" disabled={loading}>
-                    {loading ? "Sending..." : "Send Enquiry"}
-                  </button>
-
-                  <p className="form-note">
-                    By submitting this form, you agree to be contacted by phone
-                    or email.
-                  </p>
-                </form>
-              </>
-            )}
-          </div>
-
         </div>
+
       </div>
     </section>
   );

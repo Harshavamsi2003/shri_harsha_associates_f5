@@ -1,16 +1,101 @@
-# React + Vite
+# Shri Harsha Associates Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Building Excellence, Crafting Legacies**
 
-Currently, two official plugins are available:
+Premium construction and infrastructure company website built with React and Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Website
 
-## React Compiler
+- **Production:** https://www.shriharshaassociates.com
+- **Preview:** (Your Netlify URL here)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📋 Features
 
-## Expanding the ESLint configuration
+- ✅ Responsive design (Desktop, Tablet, Mobile)
+- ✅ Modern React with React Router
+- ✅ SEO optimized with sitemap and meta tags
+- ✅ Auto-deploy on GitHub push
+- ✅ Contact forms with email integration
+- ✅ WhatsApp integration
+- ✅ Google Maps integration
+- ✅ Project showcase (Residential, Commercial, Interiors)
+- ✅ Client testimonials carousel
+- ✅ Company statistics
+- ✅ About page with founder details
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Quick Start
+
+### Install Dependencies
+```bash
+npm install
+```
+
+### Development Server
+```bash
+npm run dev
+```
+
+### Build for Production
+```bash
+npm run build
+```
+
+### Preview Production Build
+```bash
+npm run preview
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/     # React components
+├── pages/          # Page components
+├── styles/         # CSS files
+├── hooks/          # Custom React hooks
+├── assets/         # Images and static files
+├── App.jsx         # Main app component
+└── main.jsx        # Entry point
+
+public/
+├── _redirects      # Netlify routing
+├── robots.txt      # SEO
+├── sitemap.xml     # SEO
+└── logo.png        # Company logo
+```
+
+## 🔧 Technologies
+
+- **React 19.2.0**
+- **React Router DOM 7.11.0**
+- **Vite 7.2.4**
+- **Font Awesome 6.5.1**
+- **Google Fonts** (Inter, Playfair Display, Montserrat)
+
+## 📞 Contact Information
+
+- **Email:** info@shriharshaassociates.com
+- **Phone:** +91 98414 19288
+- **WhatsApp:** +91 98414 19288
+- **Address:** No.7, Vivekanandhar Street, Thirumoolar Colony, Anna Nagar West, Chennai - 600040
+- **Instagram:** @shriharshaassociates
+
+## 🎯 SEO
+
+- Sitemap included
+- Robots.txt configured
+- Open Graph meta tags
+- Schema.org structured data
+- Optimized meta descriptions
+
+## 📝 License
+
+© 2025 Shri Harsha Associates. All rights reserved.
+
+## 🤝 Support
+
+For website updates or issues, contact the development team.
+
+---
+
+**Built once. Built right.**

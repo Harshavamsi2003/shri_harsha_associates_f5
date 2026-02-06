@@ -1,0 +1,73 @@
+/* =========================================================
+   GLOBAL CSS - REMOVE WHITE SIDE BAR ON MOBILE
+   Import this file in your main index.js/App.js
+   IMPORTANT: Does NOT hide floating elements
+========================================================= */
+
+/* ===================== CRITICAL MOBILE FIX ===================== */
+/* This removes the white vertical line/scrollbar on mobile */
+
+/* Apply to all screen sizes first */
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile specific - aggressive removal */
+@media (max-width: 767px) {
+  
+  /* Remove ALL scrollbars */
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0px !important;
+    background: transparent !important;
+  }
+  
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  /* Firefox */
+  html,
+  body {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  
+  /* Prevent ANY horizontal scroll */
+  html,
+  body,
+  #root,
+  main,
+  .App {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    position: relative !important;
+  }
+  
+  /* Ensure all children respect viewport width */
+  body * {
+    max-width: 100vw;
+  }
+}
+
+/* ===================== BASE RESET ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}

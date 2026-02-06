@@ -1,164 +1,279 @@
 /* =========================================================
-   SERVICES SECTION – ENHANCED & ANIMATED
-   Theme: Blue + Gold + Maroon
-   ========================================================= */
+   SERVICES â€" COMPLETE PREMIUM ENHANCED
+   Fonts: Playfair Display + Montserrat
+   Theme: Creamy White
+========================================================= */
 
 .services {
+  background: #fdfcf9;
+  padding: 100px 0 90px;
   position: relative;
-  background: #ffffff;
-  padding: 140px 24px;
   overflow: hidden;
-  color: #1c1c1c;
 }
 
-/* subtle background wash */
 .services::before {
-  content: "";
+  content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(10,42,67,0.035),
-    rgba(123,13,30,0.035)
-  );
-  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(200,180,150,0.015) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(180,160,130,0.012) 0%, transparent 50%);
+  pointer-events: none;
 }
-
-/* =========================================================
-   CONTAINER
-   ========================================================= */
 
 .services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
   position: relative;
-  z-index: 2;
-  max-width: 1350px;
-  margin: auto;
+  z-index: 1;
 }
 
 /* =========================================================
-   SECTION HEADER
-   ========================================================= */
+   SECTION TITLE
+========================================================= */
 
-.services .section-title {
+.services-intro {
   text-align: center;
-  font-size: 38px;
-  font-weight: 900;
-  color: #0a2a43;
-  margin-bottom: 12px;
+  margin-bottom: 72px;
+  opacity: 0;
+  animation: fadeInDown 0.9s ease 0.2s forwards;
 }
 
-.services .section-subtitle {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  color: #666;
-  margin-bottom: 90px;
+.services-intro h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 46px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #111;
   position: relative;
+  display: inline-block;
+  padding-bottom: 16px;
 }
 
-.services .section-subtitle::after {
-  content: "";
-  display: block;
+.services-intro h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 60px;
-  height: 3px;
-  background: #f2c35a;
-  margin: 16px auto 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c9b896, transparent);
 }
 
 /* =========================================================
-   GRID
-   ========================================================= */
+   TOP THREE PRIMARY SERVICES
+========================================================= */
+
+.services-primary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+  margin-bottom: 56px;
+  padding: 0 12px;
+}
+
+.primary-item {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: revealUp 1s ease forwards;
+  transition: transform 0.3s ease;
+}
+
+.primary-item:nth-child(1) { animation-delay: 0.4s; }
+.primary-item:nth-child(2) { animation-delay: 0.5s; }
+.primary-item:nth-child(3) { animation-delay: 0.6s; }
+
+.primary-item:hover {
+  transform: translateY(-8px);
+}
+
+.primary-item h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+  letter-spacing: 0.3px;
+}
+
+.primary-item h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+
+.primary-item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  margin-bottom: 24px;
+  transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              filter 0.6s ease;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.primary-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.02);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.primary-item p {
+  font-family: "Playfair Display", serif;
+  font-size: 16.5px;
+  line-height: 1.9;
+  color: #2a2a2a;
+  max-width: 340px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.services-divider {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c9b896, transparent);
+  margin: 64px auto 40px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.8s;
+}
+
+/* =========================================================
+   DESCRIPTION LINE - INCREASED SIZE
+========================================================= */
+
+.services-description {
+  text-align: center;
+  max-width: 920px;
+  margin: 60px auto 70px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.9s;
+}
+
+.services-description p {
+  font-family: "Playfair Display", serif;
+  font-size: 22px; /* INCREASED FROM 19px */
+  line-height: 2; /* INCREASED FROM 1.95 */
+  color: #1a1a1a; /* DARKER FOR BETTER READABILITY */
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 44px;
+  gap: 40px;
+  padding: 0 8px;
 }
-
-/* =========================================================
-   SERVICE CARD
-   ========================================================= */
 
 .service-card {
-  position: relative;
   background: #ffffff;
-  padding: 48px 40px;
-  box-shadow: 0 22px 60px rgba(0,0,0,0.14);
+  padding: 38px 36px;
+  border: 1px solid rgba(0,0,0,0.045);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.025);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
   overflow: hidden;
-
   opacity: 0;
-  transform: translateY(40px);
-  animation: serviceFadeUp 0.9s ease forwards;
+  transform: translateY(24px);
+  animation: revealUp 0.9s ease forwards;
 }
 
-/* staggered reveal */
-.service-card:nth-child(2) { animation-delay: 0.12s; }
-.service-card:nth-child(3) { animation-delay: 0.24s; }
-.service-card:nth-child(4) { animation-delay: 0.36s; }
-.service-card:nth-child(5) { animation-delay: 0.48s; }
-.service-card:nth-child(6) { animation-delay: 0.60s; }
-
-/* vertical brand accent */
 .service-card::before {
-  content: "";
+  content: '';
   position: absolute;
-  left: 0;
   top: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    #7b0d1e,
-    #f2c35a
-  );
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #c9b896, #d4c4a8);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* =========================================================
-   CARD CONTENT
-   ========================================================= */
+.service-card:nth-child(1) { animation-delay: 1s; }
+.service-card:nth-child(2) { animation-delay: 1.1s; }
+.service-card:nth-child(3) { animation-delay: 1.2s; }
+.service-card:nth-child(4) { animation-delay: 1.3s; }
+.service-card:nth-child(5) { animation-delay: 1.4s; }
+.service-card:nth-child(6) { animation-delay: 1.5s; }
 
-.service-card h3 {
-  font-size: 22px;
-  font-weight: 900;
-  color: #0a2a43;
-  margin-bottom: 18px;
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  border-color: rgba(201,184,150,0.2);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card h5 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  color: #1a1a1a;
+  letter-spacing: 0.3px;
   transition: color 0.3s ease;
 }
 
+.service-card:hover h5 {
+  color: #c9b896;
+}
+
 .service-card p {
+  font-family: "Playfair Display", serif;
   font-size: 16px;
   line-height: 1.85;
-  color: #444;
+  color: #3a3a3a;
+  font-weight: 400;
 }
 
 /* =========================================================
-   HOVER ANIMATION – DESKTOP ONLY
-   ========================================================= */
+   ANIMATIONS
+========================================================= */
 
-@media (min-width: 900px) {
-  .service-card {
-    transition:
-      transform 0.35s ease,
-      box-shadow 0.35s ease;
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-
-  .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow:
-      0 36px 90px rgba(0,0,0,0.2);
-  }
-
-  /* title color shift */
-  .service-card:hover h3 {
-    color: #7b0d1e;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* =========================================================
-   ANIMATION
-   ========================================================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-@keyframes serviceFadeUp {
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
@@ -166,49 +281,200 @@
 }
 
 /* =========================================================
-   RESPONSIVE – TABLET
-   ========================================================= */
+   TABLET (768px - 1024px)
+========================================================= */
 
 @media (max-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
+  .services {
+    padding: 90px 0 80px;
   }
 
-  .service-card {
-    padding: 44px 36px;
+  .services-intro {
+    margin-bottom: 60px;
+  }
+
+  .services-intro h2 {
+    font-size: 42px;
+  }
+
+  .services-primary {
+    grid-template-columns: 1fr;
+    gap: 56px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .primary-item img {
+    height: 320px;
+  }
+
+  .primary-item p {
+    max-width: 100%;
+  }
+
+  .services-description {
+    max-width: 720px;
+    margin: 56px auto 64px;
+  }
+
+  .services-description p {
+    font-size: 20px;
+    line-height: 1.95;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 }
 
 /* =========================================================
-   RESPONSIVE – MOBILE
-   ========================================================= */
+   MOBILE (up to 767px)
+========================================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .services {
-    padding: 120px 20px;
+    padding: 80px 0 70px;
   }
 
-  .services .section-title {
-    font-size: 30px;
+  .services-container {
+    padding: 0 20px;
   }
 
-  .services .section-subtitle {
-    margin-bottom: 60px;
-    font-size: 15px;
+  .services-intro {
+    margin-bottom: 50px;
+  }
+
+  .services-intro h2 {
+    font-size: 36px;
+    letter-spacing: 0.3px;
+  }
+
+  .services-intro h2::after {
+    width: 50px;
+  }
+
+  .services-primary {
+    gap: 48px;
+    padding: 0;
+  }
+
+  .primary-item h3 {
+    font-size: 26px;
+  }
+
+  .primary-item h4 {
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    margin-bottom: 20px;
+  }
+
+  .primary-item img {
+    height: 240px;
+    margin-bottom: 20px;
+  }
+
+  .primary-item p {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+
+  .services-description {
+    margin: 50px auto 56px;
+    padding: 0 8px;
+  }
+
+  .services-description p {
+    font-size: 18px;
+    line-height: 1.9;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 24px;
+    padding: 0;
   }
 
   .service-card {
-    padding: 40px 32px;
+    padding: 32px 28px;
+  }
+
+  .service-card h5 {
+    font-size: 20px;
+    margin-bottom: 12px;
   }
 
   .service-card p {
     font-size: 15.5px;
+    line-height: 1.8;
   }
 }
 
+/* =========================================================
+   SMALL MOBILE (up to 480px)
+========================================================= */
+
+@media (max-width: 480px) {
+  .services {
+    padding: 70px 0 60px;
+  }
+
+  .services-intro h2 {
+    font-size: 32px;
+  }
+
+  .primary-item h3 {
+    font-size: 24px;
+  }
+
+  .primary-item img {
+    height: 220px;
+  }
+
+  .primary-item p {
+    font-size: 15.5px;
+  }
+
+  .services-description p {
+    font-size: 17px;
+  }
+
+  .service-card {
+    padding: 28px 24px;
+  }
+
+  .service-card h5 {
+    font-size: 19px;
+  }
+
+  .service-card p {
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .services {
+    background: white;
+  }
+  
+  .service-card,
+  .primary-item img {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}

@@ -1,67 +1,140 @@
-
-
-
 export default function Services() {
   return (
     <section className="services" id="services">
       <div className="services-container">
 
-        <h2 className="section-title">Our Services</h2>
-        <p className="section-subtitle">
-          Comprehensive construction solutions delivered with precision and integrity
-        </p>
+        {/* TITLE */}
+        <div className="services-intro">
+          <h2>Our Services</h2>
+        </div>
 
-        <div className="services-grid">
+        {/* TOP THREE WITH IMAGES */}
+        <div className="services-primary">
 
-          <div className="service-card">
-            <h3>Residential Construction</h3>
+          <div className="primary-item">
+            <h3>Residential</h3>
+            <h4>Private Residences</h4>
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
+              alt="Residential Projects"
+            />
             <p>
-              End-to-end construction of independent houses, apartments, and
-              residential developments with superior quality standards.
+              Bespoke homes crafted with architectural precision, refined
+              detailing, and lifestyle-driven design — creating timeless,
+              deeply personal living environments that balance elegance,
+              comfort, and long-term functionality.
             </p>
           </div>
 
-          <div className="service-card">
-            <h3>Commercial Building Projects</h3>
+          <div className="primary-item">
+            <h3>Commercial</h3>
+            <h4>Corporate Environments</h4>
+            <img
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop"
+              alt="Commercial Projects"
+            />
             <p>
-              Design and execution of commercial buildings including offices,
-              retail spaces, and mixed-use developments.
+              Performance-driven commercial spaces engineered for operational
+              efficiency, adaptability, and long-term business value —
+              seamlessly integrating architectural expression with functional
+              workplace design.
             </p>
           </div>
 
-          <div className="service-card">
-            <h3>Interior Design & Execution</h3>
+          <div className="primary-item">
+            <h3>Interiors</h3>
+            <h4>Interior Architecture</h4>
+            <img
+              src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1600&auto=format&fit=crop"
+              alt="Interior Projects"
+            />
             <p>
-              Functional and aesthetic interior solutions for residential and
-              commercial spaces, executed with precision.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <h3>Renovation & Remodeling</h3>
-            <p>
-              Structural upgrades, renovations, and remodeling services that
-              enhance both functionality and appearance.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <h3>Civil & Structural Works</h3>
-            <p>
-              Strong expertise in civil engineering and structural works,
-              ensuring safety, durability, and compliance.
-            </p>
-          </div>
-
-          <div className="service-card">
-            <h3>Project Consultation & Management</h3>
-            <p>
-              Professional project planning, consultation, and management to
-              ensure timely delivery and cost efficiency.
+              Integrated interior solutions where spatial planning, material
+              selection, and refined detailing converge to create immersive,
+              elegant, and enduring interior environments.
             </p>
           </div>
 
         </div>
+
+        {/* SMALL DIVIDER LINE (NEW) */}
+        <div
+          style={{
+            width: "80px",
+            height: "1px",
+            backgroundColor: "#999",
+            margin: "50px auto 30px",
+            opacity: 0.6
+          }}
+        />
+
+        {/* DESCRIPTION LINE */}
+        <div className="services-description">
+          <p>
+            We offer a comprehensive suite of construction and infrastructure
+            services, executed with precision, integrity, and uncompromising
+            attention to detail.
+          </p>
+        </div>
+
+        {/* SIX SERVICE CARDS (FINAL) */}
+        <div className="services-grid">
+
+          <div className="service-card">
+            <h5>Residential Construction</h5>
+            <p>
+              End-to-end execution of private residences, encompassing
+              structural engineering, architectural coordination, premium
+              finishes, and quality-controlled site execution.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <h5>Commercial Buildings</h5>
+            <p>
+              Construction of commercial and mixed-use developments with
+              emphasis on structural integrity, compliance, and long-term
+              asset performance.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <h5>Infrastructure Development</h5>
+            <p>
+              Comprehensive infrastructure solutions executed with strict
+              adherence to engineering standards, safety protocols, and
+              sustainability practices.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <h5>Renovation & Remodeling</h5>
+            <p>
+              Thoughtful renovation and transformation of existing spaces,
+              blending modern engineering techniques with refined detailing.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <h5>Project Management</h5>
+            <p>
+              Complete project stewardship including planning, scheduling,
+              quality assurance, contractor coordination, and transparent
+              communication.
+            </p>
+          </div>
+
+          <div className="service-card">
+            <h5>Design Coordination</h5>
+            <p>
+              Seamless coordination between architects, consultants,
+              engineers, and clients to translate design intent into
+              technically sound outcomes.
+            </p>
+          </div>
+
+        </div>
+
       </div>
     </section>
   );
