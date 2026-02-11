@@ -14,10 +14,10 @@ export default function Services() {
           <div className="primary-item">
             <h3>Residential</h3>
             <h4>Private Residences</h4>
-            <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
-              alt="Residential Projects"
-            />
+            <img 
+    src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=2070" 
+    alt="Residential Architecture" 
+  />
             <p>
               Bespoke homes crafted with architectural precision, refined
               detailing, and lifestyle-driven design — creating timeless,
@@ -29,9 +29,9 @@ export default function Services() {
           <div className="primary-item">
             <h3>Commercial</h3>
             <h4>Corporate Environments</h4>
-            <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop"
-              alt="Commercial Projects"
+             <img
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop"
+          alt="Commercial Projects"
             />
             <p>
               Performance-driven commercial spaces engineered for operational

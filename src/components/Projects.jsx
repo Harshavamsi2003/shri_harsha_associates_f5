@@ -1,6 +1,5 @@
 
 
-
 // import { useState } from "react";
 // import "../styles/projects.css";
 
@@ -21,15 +20,15 @@
 // ).map((img) => img.default);
 
 // const residentialCompletedMeta = [
-//   { area: "Pandiyan Salai", district: "Chennai" },
-//   { area: "Sree Villa", district: "Poonamallee" },
-//   { area: "Amman Site", district: "ECR" },
-//   { area: "Govindan Nagar", district: "ECR" },
-//   { area: "Iyappakam", district: "Chennai" },
-//   { area: "ECR Residence", district: "Chennai" },
+//   { area: "Pandiyan Salai , ECR ", district: "Chennai" },
+//   { area: "Govindan Nagar , ECR", district: "Chennai" },
+//   { area: "Ponnamalle ", district: "Chennai" },
+//   { area: "ECR", district: "Chennai" },
+//   { area: "Govindan Nagar , ECR", district: "Chennai" },
+//   { area: "Iyappakaam", district: "Chennai" },
+//   { area: "ECR", district: "Chennai" },
 //   { area: "Poonamallee", district: "Chennai" },
 //   { area: "Adyar", district: "Chennai" },
-//   { area: "Poonamallee", district: "Chennai" },
 //   { area: "Poonamallee", district: "Chennai" },
 //   { area: "Poonamallee", district: "Chennai" },
 // ];
@@ -94,7 +93,7 @@
 //           <div className="category-hero-overlay"></div>
 //           <div className="category-hero-content">
 //             <h2>Residential</h2>
-//             <p>Crafting bespoke homes where architectural precision meets timeless design excellence</p>
+//             <p className="residential-desc">Crafting bespoke homes where architectural precision meets timeless design excellence</p>
 //           </div>
 //         </div>
 
@@ -132,7 +131,7 @@
 //           <div className="category-hero-overlay"></div>
 //           <div className="category-hero-content">
 //             <h2>Commercial</h2>
-//             <p>Engineering performance-driven spaces that elevate business operations and brand presence</p>
+//             <p className="commercial-desc">Engineering performance-driven spaces that elevate business operations and brand presence</p>
 //           </div>
 //         </div>
 
@@ -170,7 +169,7 @@
 //           <div className="category-hero-overlay"></div>
 //           <div className="category-hero-content">
 //             <h2>Interiors</h2>
-//             <p>Curating immersive interior environments where refined aesthetics harmonize with functional elegance</p>
+//             <p className="interiors-desc">Curating immersive interior environments where refined aesthetics harmonize with functional elegance</p>
 //           </div>
 //         </div>
 
@@ -240,6 +239,7 @@
 // }
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/projects.css";
 
 const residentialCompleted = Object.values(
@@ -259,15 +259,15 @@ const interiors = Object.values(
 ).map((img) => img.default);
 
 const residentialCompletedMeta = [
-  { area: "Pandiyan Salai", district: "Chennai" },
-  { area: "Sree Villa", district: "Poonamallee" },
-  { area: "Amman Site", district: "ECR" },
-  { area: "Govindan Nagar", district: "ECR" },
-  { area: "Iyappakam", district: "Chennai" },
-  { area: "ECR Residence", district: "Chennai" },
+  { area: "Pandiyan Salai , ECR ", district: "Chennai" },
+  { area: "Govindan Nagar , ECR", district: "Chennai" },
+  { area: "Ponnamalle ", district: "Chennai" },
+  { area: "ECR", district: "Chennai" },
+  { area: "Govindan Nagar , ECR", district: "Chennai" },
+  { area: "Iyappakaam", district: "Chennai" },
+  { area: "ECR", district: "Chennai" },
   { area: "Poonamallee", district: "Chennai" },
   { area: "Adyar", district: "Chennai" },
-  { area: "Poonamallee", district: "Chennai" },
   { area: "Poonamallee", district: "Chennai" },
   { area: "Poonamallee", district: "Chennai" },
 ];
@@ -362,6 +362,16 @@ export default function Projects() {
             ))}
           </div>
         </div>
+
+        {/* KNOW MORE BUTTON */}
+        <div className="know-more-container">
+          <Link to="/residuals" className="know-more-btn">
+            <span>Know More</span>
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
+        </div>
       </div>
 
       {/* COMMERCIAL */}
@@ -408,7 +418,7 @@ export default function Projects() {
           <div className="category-hero-overlay"></div>
           <div className="category-hero-content">
             <h2>Interiors</h2>
-            <p className="interiors-desc">Curating immersive interior environments where refined aesthetics harmonize with functional elegance</p>
+            <p className="interiors-desc">Refined aesthetics, functional elegance, expertly curated</p>
           </div>
         </div>
 

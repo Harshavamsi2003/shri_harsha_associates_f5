@@ -785,3 +785,61 @@
     display: none;
   }
 }
+
+/* Add this to your contact.css file */
+
+/* Error message styling */
+.form-group .error-message {
+  display: block;
+  color: #ff4444;
+  font-size: 12px;
+  margin-top: 6px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.3px;
+  animation: errorShake 0.3s ease;
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Error state for inputs */
+.form-group input.error,
+.form-group textarea.error {
+  border-bottom-color: #ff4444 !important;
+}
+
+/* Submit status styling */
+.submit-status {
+  margin-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  padding: 10px;
+  border-radius: 4px;
+  animation: fadeIn 0.3s ease;
+}
+
+.submit-status.success {
+  color: #25D366;
+  background: rgba(37, 211, 102, 0.1);
+}
+
+.submit-status.error {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

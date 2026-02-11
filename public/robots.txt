@@ -1,4 +1,6 @@
+# Allow Google to crawl everything
 User-agent: *
 Allow: /
 
-Sitemap: https://www.shriharshaassociates.com/sitemap.xml
+# Sitemap
+Sitemap: https://shriharshaassociates.com/sitemap.xml

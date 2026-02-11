@@ -1,7 +1,8 @@
-/* ===============================
-   PROJECTS – COMPLETE PREMIUM SECTION
-   Center-aligned hero + full image display
-================================ */
+/* =========================================================
+   PROJECTS - COMPLETE PREMIUM ENHANCED
+   Fonts: Playfair Display + Montserrat
+   Theme: Creamy White
+========================================================= */
 
 .projects {
   background: #fdfcf9;
@@ -23,13 +24,13 @@
   pointer-events: none;
 }
 
-/* ===============================
-   MAIN INTRO SECTION
-================================ */
+/* =========================================================
+   SECTION TITLE
+========================================================= */
 
 .projects-intro {
   text-align: center;
-  margin-bottom: 72px;
+  margin-bottom: 80px;
   opacity: 0;
   animation: fadeInDown 0.9s ease 0.2s forwards;
 }
@@ -56,46 +57,45 @@
   background: linear-gradient(to right, transparent, #c9b896, transparent);
 }
 
-/* ===============================
+/* =========================================================
    CATEGORY SECTIONS
-================================ */
+========================================================= */
 
 .project-category-section {
-  padding: 0 0 100px 0;
+  padding: 0 0 90px 0;
   position: relative;
 }
 
-/* ===============================
-   HERO SECTIONS - FIXED SIZE, FULL IMAGE, CENTER TEXT
-   (Like Farmhouses example)
-================================ */
+/* =========================================================
+   CATEGORY HERO - LEFT ALIGNED TEXT
+========================================================= */
 
 .project-category-hero {
   position: relative;
-  height: 500px; /* FIXED HEIGHT - shows full image */
+  height: 500px;
   display: flex;
   align-items: center;
-  justify-content: center; /* CENTER ALIGNED */
-  margin-bottom: 60px;
+  justify-content: flex-start;
+  margin-bottom: 64px;
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  padding: 0 40px;
+  padding: 0 80px;
 }
 
+/* NEW UNIQUE BACKGROUND IMAGES - NOT REPEATED FROM OTHER PAGES */
 .residential-hero {
-  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070');
+  background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071');
 }
 
 .commercial-hero {
-  background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070');
+  background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070');
 }
 
 .interiors-hero {
-  background-image: url('https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=2070');
+  background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2058');
 }
 
-/* OVERLAY - DARKER FOR BETTER TEXT VISIBILITY */
 .category-hero-overlay {
   position: absolute;
   inset: 0;
@@ -108,11 +108,10 @@
   z-index: 1;
 }
 
-/* CENTER-ALIGNED CONTENT */
 .category-hero-content {
   position: relative;
   z-index: 2;
-  text-align: center; /* CENTER ALIGNED */
+  text-align: left;
   color: #ffffff;
   max-width: 900px;
   padding: 0;
@@ -120,7 +119,6 @@
   animation: heroContentReveal 1s ease 0.3s forwards;
 }
 
-/* TITLE - CENTER ALIGNED */
 .category-hero-content h2 {
   font-family: "Playfair Display", serif;
   font-size: 56px;
@@ -133,10 +131,7 @@
   line-height: 1.15;
 }
 
-/* DESCRIPTION - CENTER ALIGNED */
-.category-hero-content p.residential-desc,
-.category-hero-content p.commercial-desc,
-.category-hero-content p.interiors-desc {
+.category-hero-content p {
   font-family: "Playfair Display", serif;
   font-size: 18px;
   font-weight: 400;
@@ -148,51 +143,62 @@
     0 4px 18px rgba(0, 0, 0, 0.9),
     0 2px 10px rgba(0, 0, 0, 0.8);
   max-width: 800px;
-  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* ===============================
+/* =========================================================
    FILTERS
-================================ */
+========================================================= */
 
 .project-filters-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 55px;
+  margin-bottom: 56px;
   opacity: 0;
-  animation: fadeIn 0.9s ease 0.3s forwards;
+  animation: fadeIn 0.9s ease 0.4s forwards;
 }
 
 .project-filters {
   display: flex;
   gap: 16px;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  border: 1px solid rgba(201,184,150,0.15);
 }
 
 .project-filters button {
   font-family: "Montserrat", sans-serif;
-  font-size: 11px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
+  font-size: 14px;
   font-weight: 600;
-  padding: 11px 28px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(201,184,150,0.25);
+  padding: 12px 32px;
+  border: none;
+  border-radius: 50px;
+  background: transparent;
   color: #666;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.project-filters button:hover,
-.project-filters button.active {
-  background: rgba(201,184,150,0.12);
-  border-color: #c9b896;
-  color: #1a1a1a;
+.project-filters button:hover {
+  color: #c9b896;
   transform: translateY(-2px);
 }
 
-/* ===============================
+.project-filters button.active {
+  background: linear-gradient(135deg, #c9b896, #d4c4a8);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(201,184,150,0.3);
+}
+
+/* =========================================================
    PROJECT GRID
-================================ */
+========================================================= */
 
 .project-grid-container {
   max-width: 1200px;
@@ -203,49 +209,30 @@
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 32px;
   opacity: 0;
-  animation: fadeInUp 0.9s ease 0.4s forwards;
+  animation: fadeInUp 0.9s ease 0.6s forwards;
 }
-
-/* ===============================
-   PROJECT CARDS
-================================ */
 
 .project-card {
   background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.04);
   overflow: hidden;
-  border: 1px solid rgba(201,184,150,0.15);
-  transition: all 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.025);
   position: relative;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, #c9b896, #d4c4a8);
-  transform: scaleX(0);
-  transition: transform 0.6s ease;
-  z-index: 2;
 }
 
 .project-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 16px 48px rgba(201,184,150,0.25);
-}
-
-.project-card:hover::before {
-  transform: scaleX(1);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+  border-color: rgba(201,184,150,0.2);
 }
 
 .project-image-wrapper {
   position: relative;
   overflow: hidden;
-  height: 300px;
+  height: 280px;
   background: #f5f3f0;
 }
 
@@ -253,40 +240,59 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s ease;
+  transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              filter 0.6s ease;
 }
 
 .project-card:hover .project-image-wrapper img {
   transform: scale(1.08);
+  filter: brightness(1.05);
 }
 
 .project-status-badge {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  background: rgba(253, 252, 250, 0.95);
-  padding: 6px 14px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 10px;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  font-weight: 700;
+  top: 20px;
+  right: 20px;
+  background: rgba(253, 252, 250, 0.96);
   color: #1a1a1a;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 20px;
   border: 1px solid rgba(201,184,150,0.3);
-  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  z-index: 5;
+  transition: all 0.4s ease;
 }
 
+.project-card:hover .project-status-badge {
+  background: linear-gradient(135deg, #c9b896, #d4c4a8);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-4px);
+}
+
+/* =========================================================
+   PROJECT INFO - REDUCED GAP BETWEEN TITLE AND LOCATION
+========================================================= */
+
 .project-info {
-  padding: 26px 28px;
+  padding: 28px 26px;
+  background: #ffffff;
 }
 
 .project-info h4 {
   font-family: "Playfair Display", serif;
   font-size: 21px;
-  font-weight: 500;
+  font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
   transition: color 0.3s ease;
+  line-height: 1.3;
 }
 
 .project-card:hover .project-info h4 {
@@ -296,24 +302,89 @@
 .project-info p {
   font-family: "Playfair Display", serif;
   font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
   color: #3a3a3a;
   margin: 0;
 }
 
-/* ===============================
-   INTERIORS CONTENT SECTION
-================================ */
+/* =========================================================
+   KNOW MORE BUTTON
+========================================================= */
+
+.know-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  opacity: 0;
+  animation: fadeIn 0.9s ease 0.8s forwards;
+}
+
+.know-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 16px 36px;
+  border: 2px solid #c9b896;
+  border-radius: 50px;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+.know-more-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #c9b896, #d4c4a8);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: -1;
+}
+
+.know-more-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.know-more-btn:hover {
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(201,184,150,0.35);
+}
+
+.know-more-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.know-more-btn:hover svg {
+  transform: translateX(6px);
+}
+
+/* =========================================================
+   INTERIOR CONTENT SECTION
+========================================================= */
 
 .interior-content-section {
   max-width: 1200px;
-  margin: 0 auto 80px;
+  margin: 0 auto;
   padding: 0 24px;
 }
 
 .interior-headline {
   text-align: center;
   max-width: 920px;
-  margin: 0 auto 72px;
+  margin: 0 auto 56px;
   opacity: 0;
   animation: fadeInDown 0.9s ease 0.4s forwards;
 }
@@ -348,9 +419,9 @@
   margin-top: 32px;
 }
 
-/* ===============================
-   INTERIOR SHOWCASE GRID
-================================ */
+/* =========================================================
+   INTERIOR SHOWCASE - 4 EQUAL IMAGES
+========================================================= */
 
 .interior-showcase-grid-four {
   display: grid;
@@ -366,33 +437,39 @@
   overflow: hidden;
   border: 1px solid rgba(201,184,150,0.15);
   transition: all 0.4s ease;
-  aspect-ratio: 1.4 / 1;
   background: #f5f3f0;
+  height: 380px;
 }
 
 .interior-showcase-image-equal img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.6s ease;
 }
 
 .interior-showcase-image-equal:hover {
-  box-shadow: 0 12px 40px rgba(201,184,150,0.2);
+  box-shadow: 0 12px 40px rgba(201,184,150,0.25);
+  transform: translateY(-6px);
+  border-color: rgba(201,184,150,0.3);
 }
 
 .interior-showcase-image-equal:hover img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
-/* ===============================
-   INTERIOR QUOTE
-================================ */
+/* =========================================================
+   INTERIOR QUOTE - SINGLE LINE - UPDATED: NO BACKGROUND, BLACK TEXT
+========================================================= */
 
 .interior-quote {
   text-align: center;
-  margin: 0 auto;
-  max-width: 800px;
+  padding: 60px 40px;
+  background: transparent;
+  border-top: none;
+  border-bottom: none;
+  margin-bottom: 64px;
   opacity: 0;
   animation: fadeIn 0.9s ease 0.8s forwards;
 }
@@ -402,9 +479,14 @@
   font-size: 28px;
   font-weight: 400;
   font-style: italic;
-  color: #c9b896;
+  color: #000000;
   position: relative;
   padding: 0 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .interior-quote p::before,
@@ -414,6 +496,7 @@
   color: rgba(201,184,150,0.3);
   position: absolute;
   font-style: normal;
+  font-family: "Playfair Display", serif;
 }
 
 .interior-quote p::before {
@@ -426,13 +509,14 @@
   bottom: -20px;
 }
 
-/* ===============================
-   INTERIORS GALLERY
-================================ */
+/* =========================================================
+   INTERIORS GALLERY - MATCHING RESIDUALS PAGE
+========================================================= */
 
 .interiors-gallery {
   opacity: 0;
   animation: fadeIn 0.9s ease 0.4s forwards;
+  margin-top: 0;
 }
 
 .gallery-main {
@@ -517,9 +601,9 @@
   margin: 0 6px;
 }
 
-/* ===============================
+/* =========================================================
    GALLERY THUMBNAILS
-================================ */
+========================================================= */
 
 .gallery-thumbnails {
   overflow: hidden;
@@ -585,9 +669,9 @@
   box-shadow: 0 12px 32px rgba(201,184,150,0.4);
 }
 
-/* ===============================
+/* =========================================================
    ANIMATIONS
-================================ */
+========================================================= */
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -609,43 +693,126 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===============================
-   RESPONSIVE - TABLET (768px - 1024px)
-================================ */
+/* =========================================================
+   RESPONSIVE - LARGE DESKTOP (1400px+)
+========================================================= */
 
-@media (max-width: 1024px) {
+@media (min-width: 1400px) {
+  .project-grid-container,
+  .interior-content-section {
+    max-width: 1400px;
+  }
+
+  .project-grid {
+    gap: 40px;
+  }
+
+  .interior-showcase-grid-four {
+    gap: 24px;
+  }
+
+  .interior-showcase-image-equal {
+    height: 420px;
+  }
+
+  .main-image-container {
+    height: 700px;
+  }
+
+  .interior-quote p {
+    font-size: 30px;
+  }
+  
+  .category-hero-content p {
+    font-size: 19px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - DESKTOP (1200px - 1399px)
+========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .category-hero-content p {
+    font-size: 18px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET (768px - 1199px)
+========================================================= */
+
+@media (max-width: 1199px) {
+  .projects-intro h2 {
+    font-size: 42px;
+  }
+
   .project-category-hero {
     height: 450px;
-    padding: 0 40px;
+    padding: 0 60px;
   }
 
   .category-hero-content h2 {
     font-size: 48px;
   }
 
-  .category-hero-content p.residential-desc,
-  .category-hero-content p.commercial-desc,
-  .category-hero-content p.interiors-desc {
+  .category-hero-content p {
     font-size: 17px;
+    white-space: normal;
   }
 
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
+    gap: 28px;
+  }
+
+  .interior-headline h3 {
+    font-size: 40px;
+  }
+
+  .interior-headline p {
+    font-size: 20px;
+  }
+
+  .interior-showcase-grid-four {
+    gap: 18px;
+  }
+
+  .interior-showcase-image-equal {
+    height: 360px;
+  }
+
+  .interior-quote p {
+    font-size: 26px;
+    white-space: normal;
   }
 
   .main-image-container {
     height: 550px;
   }
+
+  .gallery-arrow {
+    width: 52px;
+    height: 52px;
+  }
+
+  .gallery-arrow svg {
+    width: 22px;
+    height: 22px;
+  }
 }
 
-/* ===============================
+/* =========================================================
    RESPONSIVE - MOBILE (up to 767px)
-================================ */
+========================================================= */
 
 @media (max-width: 767px) {
   .projects {
     padding: 80px 0 0;
+  }
+
+  .projects-intro {
+    margin-bottom: 60px;
   }
 
   .projects-intro h2 {
@@ -654,7 +821,12 @@
 
   .project-category-hero {
     height: 380px;
-    padding: 0 28px;
+    padding: 0 32px;
+    justify-content: flex-start;
+  }
+
+  .category-hero-content {
+    max-width: 100%;
   }
 
   .category-hero-content h2 {
@@ -662,16 +834,70 @@
     margin-bottom: 16px;
   }
 
-  .category-hero-content p.residential-desc,
-  .category-hero-content p.commercial-desc,
-  .category-hero-content p.interiors-desc {
+  .category-hero-content p {
     font-size: 16px;
     line-height: 1.65;
+    white-space: normal;
+  }
+
+  .project-filters-container {
+    margin-bottom: 40px;
+  }
+
+  .project-filters {
+    gap: 10px;
+    padding: 6px;
+  }
+
+  .project-filters button {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+
+  .project-grid-container,
+  .interior-content-section {
+    padding: 0 20px;
   }
 
   .project-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
+  }
+
+  .project-image-wrapper {
+    height: 240px;
+  }
+
+  .project-info {
+    padding: 24px 22px;
+  }
+
+  .project-info h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  .project-info p {
+    font-size: 15.5px;
+    font-weight: 700;
+  }
+
+  .know-more-container {
+    margin-top: 48px;
+  }
+
+  .know-more-btn {
+    font-size: 13px;
+    padding: 14px 30px;
+  }
+
+  .project-category-section {
+    padding: 0 0 70px 0;
+  }
+
+  .interior-headline {
+    margin-bottom: 44px;
   }
 
   .interior-headline h3 {
@@ -680,16 +906,28 @@
 
   .interior-headline p {
     font-size: 18px;
+    line-height: 1.85;
   }
 
   .interior-showcase-grid-four {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 18px;
+    margin-bottom: 50px;
+  }
+
+  .interior-showcase-image-equal {
+    height: 320px;
+  }
+
+  .interior-quote {
+    padding: 50px 24px;
+    margin-bottom: 50px;
   }
 
   .interior-quote p {
     font-size: 22px;
     padding: 0 30px;
+    white-space: normal;
   }
 
   .main-image-container {
@@ -709,19 +947,33 @@
     right: 16px;
   }
 
+  .gallery-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .image-counter {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+
   .thumbnail {
     width: 120px;
     height: 80px;
   }
 }
 
-/* ===============================
+/* =========================================================
    RESPONSIVE - SMALL MOBILE (up to 480px)
-================================ */
+========================================================= */
 
 @media (max-width: 480px) {
   .projects {
     padding: 70px 0 0;
+  }
+
+  .projects-intro {
+    margin-bottom: 50px;
   }
 
   .projects-intro h2 {
@@ -735,14 +987,62 @@
 
   .category-hero-content h2 {
     font-size: 32px;
-    margin-bottom: 14px;
   }
 
-  .category-hero-content p.residential-desc,
-  .category-hero-content p.commercial-desc,
-  .category-hero-content p.interiors-desc {
+  .category-hero-content p {
     font-size: 15px;
     line-height: 1.6;
+    white-space: normal;
+  }
+
+  .project-filters button {
+    font-size: 11px;
+    padding: 9px 18px;
+  }
+
+  .project-grid-container,
+  .interior-content-section {
+    padding: 0 16px;
+  }
+
+  .project-grid {
+    gap: 20px;
+  }
+
+  .project-image-wrapper {
+    height: 220px;
+  }
+
+  .project-info {
+    padding: 20px 18px;
+  }
+
+  .project-info h4 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .project-info p {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .know-more-container {
+    margin-top: 40px;
+  }
+
+  .know-more-btn {
+    font-size: 12px;
+    padding: 12px 26px;
+  }
+
+  .project-category-section {
+    padding: 0 0 60px 0;
+  }
+
+  .interior-headline {
+    margin-bottom: 36px;
   }
 
   .interior-headline h3 {
@@ -751,11 +1051,27 @@
 
   .interior-headline p {
     font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .interior-showcase-grid-four {
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .interior-showcase-image-equal {
+    height: 280px;
+  }
+
+  .interior-quote {
+    padding: 40px 20px;
+    margin-bottom: 40px;
   }
 
   .interior-quote p {
     font-size: 20px;
-    padding: 0 20px;
+    padding: 0 24px;
+    white-space: normal;
   }
 
   .main-image-container {
@@ -767,15 +1083,38 @@
     height: 44px;
   }
 
+  .gallery-arrow.prev {
+    left: 12px;
+  }
+
+  .gallery-arrow.next {
+    right: 12px;
+  }
+
+  .gallery-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+
   .image-counter {
-    padding: 10px 20px;
-    font-size: 13px;
+    padding: 9px 20px;
+    font-size: 12px;
+    bottom: 20px;
+  }
+
+  .thumbnail {
+    width: 110px;
+    height: 75px;
+  }
+
+  .thumbnails-track {
+    gap: 14px;
   }
 }
 
-/* ===============================
+/* =========================================================
    ACCESSIBILITY
-================================ */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -788,35 +1127,52 @@
 }
 
 /* Focus states */
-.project-filters button:focus,
+.project-card:focus,
+.know-more-btn:focus,
 .gallery-arrow:focus,
 .thumbnail:focus {
   outline: 3px solid #c9b896;
   outline-offset: 4px;
 }
 
-/* ===============================
+/* =========================================================
    PRINT STYLES
-================================ */
+========================================================= */
 
 @media print {
   .projects {
     background: white;
+    padding-top: 0;
   }
   
   .project-card,
-  .interior-showcase-image-equal,
-  .main-image-container {
+  .main-image-container,
+  .interior-showcase-image-equal {
     box-shadow: none;
     border: 1px solid #ddd;
+    page-break-inside: avoid;
   }
 
+  .project-filters,
+  .know-more-btn,
   .gallery-arrow,
-  .image-counter {
+  .image-counter,
+  .gallery-thumbnails {
     display: none;
   }
 
   .project-category-hero {
     page-break-before: always;
+  }
+
+  .interior-quote p::before,
+  .interior-quote p::after {
+    display: none;
+  }
+
+  .project-grid,
+  .interior-showcase-grid-four {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }

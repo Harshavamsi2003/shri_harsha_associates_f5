@@ -1,76 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <!-- Homepage -->
+  <!-- Home Page -->
   <url>
-    <loc>https://www.shriharshaassociates.com/</loc>
-    <lastmod>2025-02-07</lastmod>
+    <loc>https://shriharshaassociates.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
   <!-- About Page -->
   <url>
-    <loc>https://www.shriharshaassociates.com/about</loc>
-    <lastmod>2025-02-07</lastmod>
+    <loc>https://shriharshaassociates.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
+
+  <!-- Residuals Page -->
+  <url>
+    <loc>https://shriharshaassociates.com/residuals</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Services Section -->
   <url>
-    <loc>https://www.shriharshaassociates.com/#services</loc>
-    <lastmod>2025-02-07</lastmod>
+    <loc>https://shriharshaassociates.com/#services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Projects Section -->
   <url>
-    <loc>https://www.shriharshaassociates.com/#projects</loc>
-    <lastmod>2025-02-07</lastmod>
+    <loc>https://shriharshaassociates.com/#projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Residential Projects -->
-  <url>
-    <loc>https://www.shriharshaassociates.com/#projects-residential</loc>
-    <lastmod>2025-02-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Commercial Projects -->
-  <url>
-    <loc>https://www.shriharshaassociates.com/#projects-commercial</loc>
-    <lastmod>2025-02-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Interior Projects -->
-  <url>
-    <loc>https://www.shriharshaassociates.com/#projects-interiors</loc>
-    <lastmod>2025-02-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <!-- Testimonials Section -->
-  <url>
-    <loc>https://www.shriharshaassociates.com/#testimonials</loc>
-    <lastmod>2025-02-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
+
   <!-- Contact Section -->
   <url>
-    <loc>https://www.shriharshaassociates.com/#contact</loc>
-    <lastmod>2025-02-07</lastmod>
+    <loc>https://shriharshaassociates.com/#contact</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
 </urlset>

@@ -2,13 +2,14 @@
    HEADER – ENHANCED PROFESSIONAL WITH DROPDOWN
    Transparent on home page, solid on scroll/other pages
    Fonts: Playfair Display + Montserrat
+   UPDATED: Minimal gap between logo and company name
 ========================================================= */
 
 .site-header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 88px;
+  height: 96px;
   z-index: 3000;
   background: transparent;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -33,13 +34,13 @@
 }
 
 /* =========================================================
-   BRAND SECTION
+   BRAND SECTION - MINIMAL GAP BETWEEN LOGO & TEXT
 ========================================================= */
 
 .header-brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -49,50 +50,59 @@
 }
 
 .header-brand img {
-  height: 50px;
+  height: 88px;
+  width: auto;
   transition: transform 0.3s ease;
+  filter: brightness(1.05);
 }
 
 .header-brand:hover img {
   transform: scale(1.05);
 }
 
-/* BRAND TEXT */
+/* BRAND TEXT - LARGER & MORE VISIBLE */
 .brand-text h1 {
   font-family: "Playfair Display", serif;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   color: #111111;
   letter-spacing: 0.3px;
   transition: color 0.3s ease;
   margin: 0;
+  line-height: 1.2;
 }
 
 .brand-text span {
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: #6a6a6a;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s ease;
   display: block;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
-/* TRANSPARENT STATE (HOME PAGE) */
+/* TRANSPARENT STATE (HOME PAGE) - ENHANCED VISIBILITY */
 .site-header:not(.light) .brand-text h1 {
   color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 
+    0 3px 12px rgba(0, 0, 0, 0.5),
+    0 1px 6px rgba(0, 0, 0, 0.4);
+  font-weight: 500;
 }
 
 .site-header:not(.light) .brand-text span {
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 
+    0 3px 12px rgba(0, 0, 0, 0.5),
+    0 1px 6px rgba(0, 0, 0, 0.4);
+  font-weight: 600;
 }
 
 .site-header:not(.light) .header-brand img {
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.5)) brightness(1.1);
 }
 
 /* =========================================================
@@ -112,7 +122,7 @@
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
-  letter-spacing: 1.8px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 700;
   color: #111111;
@@ -149,17 +159,20 @@
   color: #c9b896;
 }
 
-/* TRANSPARENT STATE NAVIGATION */
+/* TRANSPARENT STATE NAVIGATION - ENHANCED VISIBILITY */
 .site-header:not(.light) .header-nav > button,
 .site-header:not(.light) .nav-dropdown > button {
   color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.4),
+    0 1px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
 }
 
 .site-header:not(.light) .header-nav > button:hover,
 .site-header:not(.light) .nav-dropdown > button:hover,
 .site-header:not(.light) .nav-dropdown > button.active {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* =========================================================
@@ -209,7 +222,7 @@
   padding: 14px 20px;
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
   font-weight: 600;
   color: #1a1a1a;
@@ -246,15 +259,17 @@
 }
 
 .mobile-menu-toggle span {
-  width: 24px;
-  height: 2px;
+  width: 26px;
+  height: 2.5px;
   background: #111111;
   transition: all 0.3s ease;
   display: block;
+  border-radius: 2px;
 }
 
 .site-header:not(.light) .mobile-menu-toggle span {
   background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* MOBILE MENU OPEN STATE */
@@ -277,7 +292,7 @@
 .mobile-menu {
   display: none;
   position: fixed;
-  top: 88px;
+  top: 96px;
   left: 0;
   width: 100%;
   background: rgba(253, 252, 250, 0.98);
@@ -288,7 +303,7 @@
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 2999;
-  max-height: calc(100vh - 88px);
+  max-height: calc(100vh - 96px);
   overflow-y: auto;
 }
 
@@ -302,10 +317,9 @@
   width: 100%;
   text-align: left;
   padding: 14px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
-  letter-spacing: 1.8px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 700;
   color: #111111;
@@ -342,7 +356,7 @@
   padding: 14px 0;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
-  letter-spacing: 1.8px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 700;
   color: #111111;
@@ -380,7 +394,7 @@
   padding: 12px 16px;
   font-family: "Montserrat", sans-serif;
   font-size: 11px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
   font-weight: 600;
   color: #1a1a1a;
@@ -405,6 +419,10 @@
 ========================================================= */
 
 @media (max-width: 1024px) {
+  .site-header {
+    height: 88px;
+  }
+
   .header-container {
     padding: 0 32px;
   }
@@ -416,19 +434,29 @@
   .header-nav > button,
   .nav-dropdown > button {
     font-size: 10px;
-    letter-spacing: 1.6px;
+    letter-spacing: 1.8px;
+  }
+
+  .header-brand {
+    gap: 8px;
+  }
+
+  .header-brand img {
+    height: 80px;
   }
 
   .brand-text h1 {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .brand-text span {
     font-size: 10px;
+    letter-spacing: 1.8px;
   }
 
-  .header-brand img {
-    height: 46px;
+  .mobile-menu {
+    top: 88px;
+    max-height: calc(100vh - 88px);
   }
 }
 
@@ -438,24 +466,28 @@
 
 @media (max-width: 900px) {
   .site-header {
-    height: 72px;
+    height: 80px;
   }
 
   .header-container {
     padding: 0 24px;
   }
 
+  .header-brand {
+    gap: 7px;
+  }
+
   .header-brand img {
-    height: 42px;
+    height: 72px;
   }
 
   .brand-text h1 {
-    font-size: 16px;
+    font-size: 19px;
   }
 
   .brand-text span {
     font-size: 9px;
-    letter-spacing: 1.3px;
+    letter-spacing: 1.5px;
   }
 
   /* HIDE DESKTOP NAV */
@@ -471,44 +503,112 @@
   /* SHOW MOBILE MENU */
   .mobile-menu {
     display: block;
-    top: 72px;
+    top: 80px;
+    max-height: calc(100vh - 80px);
   }
 }
 
 /* =========================================================
-   SMALL MOBILE (up to 480px)
+   SMALL MOBILE (up to 767px)
 ========================================================= */
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
+  .site-header {
+    height: 76px;
+  }
+
   .header-container {
     padding: 0 20px;
   }
 
+  .header-brand {
+    gap: 6px;
+  }
+
   .header-brand img {
-    height: 38px;
+    height: 68px;
   }
 
   .brand-text h1 {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .brand-text span {
-    font-size: 8px;
+    font-size: 8.5px;
+    letter-spacing: 1.4px;
+    margin-top: 3px;
   }
 
   .mobile-menu {
     padding: 20px;
+    top: 76px;
+    max-height: calc(100vh - 76px);
   }
 
   .mobile-menu > button,
   .mobile-submenu-trigger {
     padding: 12px 0;
     font-size: 11px;
+    letter-spacing: 1.8px;
   }
 
   .mobile-submenu-content button {
     padding: 11px 14px;
     font-size: 10px;
+    letter-spacing: 1.6px;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL MOBILE (up to 480px)
+========================================================= */
+
+@media (max-width: 480px) {
+  .site-header {
+    height: 72px;
+  }
+
+  .header-container {
+    padding: 0 18px;
+  }
+
+  .header-brand {
+    gap: 5px;
+  }
+
+  .header-brand img {
+    height: 64px;
+  }
+
+  .brand-text h1 {
+    font-size: 16px;
+  }
+
+  .brand-text span {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .mobile-menu-toggle span {
+    width: 24px;
+    height: 2px;
+  }
+
+  .mobile-menu {
+    top: 72px;
+    max-height: calc(100vh - 72px);
+    padding: 18px;
+  }
+
+  .mobile-menu > button,
+  .mobile-submenu-trigger {
+    padding: 11px 0;
+    font-size: 10.5px;
+  }
+
+  .mobile-submenu-content button {
+    padding: 10px 12px;
+    font-size: 9.5px;
   }
 }
 
@@ -523,20 +623,23 @@
   .nav-dropdown > button,
   .dropdown-menu,
   .mobile-menu,
-  .mobile-submenu-content {
+  .mobile-submenu-content,
+  .mobile-menu-toggle span {
     transition: none !important;
+    animation: none !important;
   }
 }
 
-.header-nav > button:focus,
-.nav-dropdown > button:focus,
-.dropdown-menu button:focus,
-.mobile-menu-toggle:focus,
-.mobile-menu > button:focus,
-.mobile-submenu-trigger:focus,
-.mobile-submenu-content button:focus {
-  outline: 2px solid #c9b896;
+.header-nav > button:focus-visible,
+.nav-dropdown > button:focus-visible,
+.dropdown-menu button:focus-visible,
+.mobile-menu-toggle:focus-visible,
+.mobile-menu > button:focus-visible,
+.mobile-submenu-trigger:focus-visible,
+.mobile-submenu-content button:focus-visible {
+  outline: 3px solid #c9b896;
   outline-offset: 4px;
+  border-radius: 2px;
 }
 
 /* =========================================================
@@ -544,5 +647,79 @@
 ========================================================= */
 
 html {
-  scroll-padding-top: 100px;
+  scroll-padding-top: 110px;
+}
+
+/* =========================================================
+   PREMIUM ENHANCEMENTS
+========================================================= */
+
+/* Subtle animation on logo */
+@keyframes logoGlow {
+  0%, 100% {
+    filter: brightness(1.05);
+  }
+  50% {
+    filter: brightness(1.15);
+  }
+}
+
+.site-header:not(.light) .header-brand img {
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+/* Smooth transitions for all interactive elements */
+.header-brand,
+.header-nav > button,
+.nav-dropdown > button,
+.dropdown-menu button,
+.mobile-menu > button,
+.mobile-submenu-trigger,
+.mobile-submenu-content button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Enhanced hover state for brand */
+.header-brand:hover {
+  transform: translateX(3px);
+}
+
+.header-brand:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.15);
+}
+
+/* =========================================================
+   PRINT STYLES
+========================================================= */
+
+@media print {
+  .site-header {
+    position: relative;
+    height: auto;
+    background: white;
+    box-shadow: none;
+  }
+
+  .mobile-menu-toggle,
+  .mobile-menu,
+  .dropdown-menu {
+    display: none !important;
+  }
+
+  .header-nav {
+    display: flex !important;
+  }
+
+  .brand-text h1,
+  .brand-text span,
+  .header-nav > button,
+  .nav-dropdown > button {
+    color: #111111 !important;
+    text-shadow: none !important;
+  }
+
+  .header-brand img {
+    filter: none !important;
+  }
 }
