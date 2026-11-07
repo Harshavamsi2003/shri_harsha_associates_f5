@@ -1,5 +1,3 @@
-
-
 // import { useState } from "react";
 // import "../styles/projects.css";
 
@@ -270,6 +268,7 @@ const residentialCompletedMeta = [
   { area: "Adyar", district: "Chennai" },
   { area: "Poonamallee", district: "Chennai" },
   { area: "Poonamallee", district: "Chennai" },
+  { area: "Rathinam Nagar", district: "Coimbatore" }, // z1 - kalapatti road ,rathinam nagar.png
 ];
 
 const commercialMeta = [
@@ -288,11 +287,11 @@ export default function Projects() {
   let residentialProjects = [];
   if (residentialFilter === "All") {
     residentialProjects = [
-      ...residentialOngoing.map((img) => ({ img, status: "Ongoing", area: "Rathinam Nagar", district: "Coimbatore" })),
+      ...residentialOngoing.map((img) => ({ img, status: "Ongoing", area: "Sugunapuram", district: "Coimbatore" })),
       ...residentialCompleted.map((img, i) => ({ img, status: "Completed", ...residentialCompletedMeta[i] })),
     ];
   } else if (residentialFilter === "Ongoing") {
-    residentialProjects = residentialOngoing.map((img) => ({ img, status: "Ongoing", area: "Rathinam Nagar", district: "Coimbatore" }));
+    residentialProjects = residentialOngoing.map((img) => ({ img, status: "Ongoing", area: "Sugunapuram", district: "Coimbatore" }));
   } else if (residentialFilter === "Completed") {
     residentialProjects = residentialCompleted.map((img, i) => ({ img, status: "Completed", ...residentialCompletedMeta[i] }));
   }
